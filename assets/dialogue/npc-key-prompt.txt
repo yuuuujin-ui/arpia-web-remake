@@ -1,0 +1,2 @@
+Mode: built-in image_gen
+Keep these exact three character portraits unchanged. Replace ALL background and gaps behind/between them with perfectly flat vivid magenta #ff00ff. No gradient, no shadow, no checkerboard. Keep each in separate equal third, ensure no character crosses its third boundary; preserve clean outline and full heads. Production chroma-key game portrait atlas, 1536x1024.

@@ -1,0 +1,2 @@
+Mode: built-in image_gen
+Edit only the background of this Matilda dialogue portrait. Keep character, pose, all colors, face, clothes and fine outlines unchanged. Replace the gray-white checkerboard with a perfectly flat solid vivid magenta #ff00ff background. Absolutely no checkerboard, no white halo, no shadow, no gradient in the background. This is a game chroma-key sprite; do not use simulated transparency. Preserve entire character silhouette with clean antialiased edges.
