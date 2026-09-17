@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>마법학교 아르피아 · 제1–16화</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="selection.css"><link rel="stylesheet" href="classic.css">
+<link rel="stylesheet" href="title.css">
+</head>
+<body>
+<div class="page-head"><span></span><span>LOCAL EDITION <b>16</b></span></div>
+<main id="game" aria-label="마법학교 아르피아 게임">
+ <div id="title-screen" class="screen">
+  <div class="title-shade"></div><div class="title-content">
+   <img class="logo" src="assets/original/background/title.png" alt="마법학교 Arpia">
+   <nav class="title-menu" aria-label="시작 메뉴">
+    <button class="title-menu-item" id="new-game">게임 시작</button>
+    <button class="title-menu-item" id="continue-game">이어 하기</button>
+    <button class="title-menu-item" id="title-help">게임 안내</button>
+    <button class="title-menu-item" id="title-credits">제 작 진</button>
+   </nav>
+  </div><div class="edition">제1–16화</div>
+ </div>
+ <div id="play-screen" class="screen hidden">
+  <header class="game-top"><img src="assets/original/background/title.png" alt="Arpia"><span id="location">마법학교 앞</span><div><button id="sound" title="음악 켜기/끄기">♪ 음악 끔</button><button id="fullscreen" title="전체 화면">⛶</button><button id="pause" title="게임 메뉴">☰</button></div></header>
+  <div id="view"><canvas id="world" width="1080" height="540" tabindex="0" aria-label="게임 필드. 방향키 또는 WASD로 이동, E로 대화"></canvas>
+   <div id="quest-tracker"><span class="quest-kicker">진행 중인 미션</span><strong id="quest-title"></strong><span id="quest-objective"></span></div>
+   <button id="map-mini" title="지도 열기"><canvas id="minimap" width="148" height="92"></canvas><span>맵 정보 <kbd>M</kbd></span></button>
+   <div id="area-toast"></div><div id="toast" role="status"></div><div id="interaction-hint"></div>
+   <div id="battle-ui" class="hidden"><div id="battle-heading"><span>마법 대결</span><strong id="battle-name"></strong><small id="battle-round"></small></div><div id="enemy-cards"></div><div id="battle-log" aria-live="polite"></div><div id="battle-extras"></div><div id="battle-actions"></div></div>
+   <section id="dialog" class="hidden" aria-label="대화"><img id="dialog-portrait" alt=""><img id="dialog-partner" alt=""><div class="dialog-copy"><div id="speaker"></div><div id="dialog-text"></div><button id="dialog-next">계속 <span>SPACE ▸</span></button></div></section>
+  </div>
+  <footer class="hud"><div class="portrait-ring"><img id="hud-portrait" alt="주인공"></div><div class="vitals"><div class="player-line"><strong id="player-name"></strong><span id="player-level"></span></div><div class="meter hp"><i id="hp-bar"></i><span id="hp-text"></span></div><div class="meter mp"><i id="mp-bar"></i><span id="mp-text"></span></div><div class="meter xp"><i id="xp-bar"></i></div></div><div class="wallet"><span id="gold"></span><small id="sp"></small><small id="pet-status"></small></div><nav class="hud-nav"><button data-panel="status" class="classic-nav nav-button-0"><span>내정보</span></button><button data-panel="pet" class="classic-nav nav-button-1"><span>펫정보</span></button><button data-panel="magic" class="classic-nav nav-button-2"><span>마법</span></button><button data-panel="inventory" class="classic-nav nav-button-3"><span>아이템</span></button><button data-panel="journal" class="classic-nav nav-button-4"><span>미션</span></button><button data-panel="room" class="classic-nav nav-button-5"><span>마이룸</span></button><button data-panel="map" class="classic-nav nav-button-6"><span>맵정보</span></button><button data-panel="codex" class="classic-nav nav-button-7"><span>도감</span></button><button id="recall-btn" class="classic-nav nav-button-8" type="button"><span>학교</span></button></nav></footer>
+ </div>
+ <div id="modal-layer" class="hidden"><section id="modal" role="dialog" aria-modal="true"><button id="modal-close" aria-label="닫기">×</button><div id="modal-body"></div></section></div>
+</main>
+<div class="page-foot"><span>클릭 이동 · WASD / 방향키 · E 대화 · Space 다음 대사</span><span id="save-status">원작 자료 기반 팬 재구현 · 오프라인 플레이</span></div>
+<script src="assets/walk-data.js"></script><script src="motion.js"></script><script src="navigation.js"></script><script src="assets/royal-data.js"></script><script src="assets/underground-data.js"></script><script src="assets/story-data.js"></script><script src="expansion.js"></script><script src="chapter5.js"></script><script src="chapter6.js"></script><script src="chapter7.js"></script><script src="chapter8.js"></script><script src="chapter9.js"></script><script src="chapter10.js"></script><script src="chapter11.js"></script><script src="assets/maps/all.js"></script><script src="assets/walkmasks.js"></script><script src="tilemap.js"></script><script src="encounters.js"></script><script src="chapter12.js"></script><script src="chapter13.js"></script><script src="chapter14.js"></script><script src="chapter15.js"></script><script src="chapter16.js"></script><script src="free-missions.js"></script><script src="classic-ui.js"></script><script src="assets/dialogue-data.js"></script><script src="portraits.js"></script><script src="world.js"></script><script src="dungeons.js"></script><script src="systems-data.js"></script><script src="systems.js"></script><script src="missions-extra.js"></script><script src="assets/art-revision/walk-embed.js"></script><script src="art-revision.js"></script><script src="game.js"></script>
+</body></html>

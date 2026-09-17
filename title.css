@@ -1,0 +1,15 @@
+/* Preserve the existing background and original logo; recreate the classic title hierarchy. */
+#title-screen{container-type:inline-size;background-image:url('assets/title-generated.webp');background-position:center;background-size:cover}
+#title-screen .title-shade{background:linear-gradient(180deg,#05251b0d 55%,#05251b65),radial-gradient(ellipse at 36% 39%,#173e2820 0%,transparent 58%);pointer-events:none}
+#title-screen .title-content{left:12%;top:9%;width:48%;display:flex;align-items:center;flex-direction:column}
+#title-screen .logo{display:block;width:100%;max-width:none;height:auto;margin:0;filter:drop-shadow(0 3px 0 #172e22aa) drop-shadow(0 7px 12px #062b2180)}
+#title-screen .title-menu{display:flex;flex-direction:column;gap:clamp(4px,.7cqw,9px);width:84%;margin-top:clamp(16px,3cqw,34px)}
+#title-screen .title-menu-item{position:relative;isolation:isolate;display:block;width:100%;min-height:36px;padding:.6cqw 1.8cqw;border:0;border-radius:0;background:transparent;color:#fffde5;text-align:center;font-family:"Batang","바탕",serif;font-size:clamp(16px,2.25cqw,27px);font-weight:700;line-height:1.35;letter-spacing:.3em;text-indent:.3em;text-shadow:0 2px 2px #15392e,0 0 6px #163628;transition:color .15s,transform .15s}
+#title-screen .title-menu-item::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,transparent,#275c45ba 17%,#25533ee0 50%,#275c45ba 83%,transparent);border-block:1px solid #d9e4b321;transform:skewX(-14deg);transition:background .15s}
+#title-screen .title-menu-item:hover:not(:disabled),#title-screen .title-menu-item:focus-visible{color:#fff0a8;filter:none;text-shadow:0 2px 2px #1a382a,0 0 9px #e8d48370}
+#title-screen .title-menu-item:hover:not(:disabled)::before,#title-screen .title-menu-item:focus-visible::before{background:linear-gradient(90deg,transparent,#3e7753dd 17%,#416e40f0 50%,#3e7753dd 83%,transparent);border-color:#f1dfa977}
+#title-screen .title-menu-item:focus-visible{outline:2px solid #f3dda4;outline-offset:3px}
+#title-screen .title-menu-item:disabled{opacity:.45;text-shadow:0 1px 2px #14291f}
+#title-screen .edition{bottom:3.5%;left:3.5%;right:auto;color:#e6e6cd;font-size:clamp(9px,1cqw,12px);text-shadow:0 1px 3px #123227;letter-spacing:.1em}
+@media(max-width:600px){#title-screen .title-content{top:7%;left:8%;width:54%}#title-screen .title-menu{width:94%;margin-top:10px;gap:3px}#title-screen .title-menu-item{min-height:25px;padding:2px 8px;font-size:clamp(12px,3cqw,18px)}}
+@media(prefers-reduced-motion:reduce){#title-screen .title-menu-item,#title-screen .title-menu-item::before{transition:none}}

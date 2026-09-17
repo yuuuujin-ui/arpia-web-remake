@@ -1,0 +1,22 @@
+/* Original 800x600 character selection artwork with accessible live hit areas. */
+#modal.book-modal{width:800px;max-width:min(96vw,calc(92vh * 4 / 3));max-height:92vh;padding:0;border:0;border-radius:0;overflow:hidden;background:none;box-shadow:0 10px 60px #0008}
+.creation-book{position:relative;width:100%;aspect-ratio:4/3;container-type:inline-size}
+.book-art,.book-navigation-art{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.original-races{position:absolute;left:10.8%;top:29.8%;width:35.1%;height:25.3%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:4.8% 2.5%}
+.race-hotspot,.book-hotspot{padding:0;background:transparent;border:0;border-radius:15px;color:transparent}
+.race-hotspot:hover{box-shadow:inset 0 0 12px #fff8;outline:2px solid #fff6}
+.race-hotspot:focus-visible,.book-hotspot:focus-visible{outline:3px solid #fff5ad;outline-offset:-3px;box-shadow:0 0 7px #542}
+.book-hotspot{position:absolute;top:92.2%;height:6.3%;width:12.5%;border-radius:4px}
+.book-hotspot:hover{box-shadow:inset 0 0 14px #fff7}
+.book-prev{left:.7%}.book-next{right:.7%}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.name-portrait{position:absolute;left:12%;top:17%;width:32%;height:64%;object-fit:contain}
+.name-entry{position:absolute;left:56%;top:22%;width:33%;color:#746344}
+.name-kicker{font-size:1.6cqw;letter-spacing:.2em;color:#948058}
+#modal .name-entry h2{font-size:3.7cqw;margin:2cqw 0;color:#6d7830;font-family:'Batang',serif}
+#modal .name-entry p{font-size:1.8cqw;line-height:1.8;margin:2.4cqw 0}
+.name-entry label{display:block;font-size:1.8cqw;margin-top:4cqw;margin-bottom:1cqw}
+.name-entry input{width:100%;font-size:2.7cqw;padding:1.4cqw;border:1px solid #a79971;background:#fff9eab8;color:#3d482c;outline-offset:2px;border-radius:3px}
+.name-entry small{display:block;font-size:1.4cqw;margin-top:1cqw;color:#93815c}
+#modal #name-error{font-size:1.6cqw;color:#a94325;margin:1cqw 0}
+.book-navigation-art{clip-path:inset(91% 0 0 0)}
