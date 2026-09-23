@@ -4,6 +4,7 @@ window.ARPIA_DATA=(()=>{
  const ITEMS={
   // consumables
   potion:{name:'회복약',kind:'consume',price:20,sell:8,desc:'체력 55 회복',hp:55,icon:'🧪'},
+  healthGift10:{name:'고급 체력물약',kind:'consume',price:0,sell:0,desc:'압둘라가 거래의 답례로 보낸 물약 · 체력 100 회복',hp:100,icon:'🧴'},
   hipotion:{name:'슈퍼체력물약',kind:'consume',price:120,sell:40,desc:'체력 200 회복',hp:200,icon:'🧴'},
   ether:{name:'마력약',kind:'consume',price:25,sell:10,desc:'마력 18 회복',mp:18,icon:'💧'},
   hiether:{name:'슈퍼마력물약',kind:'consume',price:130,sell:45,desc:'마력 60 회복',mp:60,icon:'🔵'},

@@ -6,7 +6,7 @@
  const CELL=16;
  const pictures=new Map();
  function picture(src){let im=pictures.get(src);if(!im){im=new Image();im.src=src;pictures.set(src,im);}return im;}
- const sheetSrc=name=>name==='objects'?'assets/tiles/objects.webp':name==='doors'?'assets/tiles/doors.png':`assets/tiles/${name}.png`;
+ const sheetSrc=name=>name==='objects'?'assets/tiles/objects.png':name==='doors'?'assets/tiles/doors.png':`assets/tiles/${name}.png`;
  const cache=new Map();
  function prep(id){
   if(cache.has(id))return cache.get(id);

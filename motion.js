@@ -2,6 +2,8 @@
 window.createArpiaMotion=()=>{
  const dirs=['down','left','right','up'],vectors={down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0},up:{x:0,y:-1}};
  const frames=[],metrics=[],clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+ const dog={};for(const [key,file]of Object.entries({idle:'stand1.gif',front:'moveFront1.gif',back:'moveBack1.gif',side:'moveSide1.gif',spell:'spellCast1.gif'})){const im=new Image();im.src='assets/original/pet-images/dog/'+file;dog[key]=im;}
+ const forms={};for(const [key,path]of Object.entries({festivalPoisoned36:'assets/chapter36/goblin-form-v1.png',festivalDragon37:'assets/midterm/earth-dragon.png',devileyeDisguise39:'assets/restored/devileye-sprite.png'})){const im=new Image();im.src=path;forms[key]=im;}
  let direction='down',heading={x:0,y:1},moving=false,distance=0,frame=0,trail=[],pet={x:0,y:0,hop:0,phase:0,moving:false,direction:'down'},hadPet=false;
  const length=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
  function behind(s){return{x:s.x-heading.x*34-heading.y*9,y:s.y-heading.y*34+heading.x*9};}
@@ -51,7 +53,12 @@ window.createArpiaMotion=()=>{
    metrics[hero]={sourceWidth:source.width,sourceHeight:source.height,frames:cells.length,groundY:68,visibleHeight:49};
   }));
  }
- function drawHero(ctx,hero,x,y,scale=1,battle=false){const row=battle?2:dirs.indexOf(direction),sprite=frames[hero]?.[row]?.[battle?0:frame];if(!sprite)return;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(sprite,Math.round(x-36*scale),Math.round(y-68*scale),72*scale,72*scale);ctx.restore();}
+ function drawHero(ctx,hero,x,y,scale=1,battle=false){
+  const state=window.ARPIA?.state,form=Object.keys(forms).find(key=>state?.[key]);if(form){const im=forms[form];if(im.complete&&im.naturalWidth){const box=form==='festivalPoisoned36'?[152,131,787,1188]:[0,0,im.naturalWidth,im.naturalHeight];const h=(form==='festivalPoisoned36'?58:form==='festivalDragon37'?90:84)*scale,w=h*box[2]/box[3];ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,...box,Math.round(x-w/2),Math.round(y-h),w,h);ctx.restore();return;}}
+
+  if(window.ARPIA?.state?.dogForm30){const key=battle?'spell':moving?(direction==='up'?'back':direction==='down'?'front':'side'):'idle',sprite=dog[key];if(!sprite?.complete)return;const w=60*scale,h=60*scale;ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(Math.round(x),Math.round(y));if(direction==='right'&&!battle)ctx.scale(-1,1);ctx.drawImage(sprite,-w/2,-h,w,h);ctx.restore();return;}
+  const row=battle?2:dirs.indexOf(direction),sprite=frames[hero]?.[row]?.[battle?0:frame];if(!sprite)return;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(sprite,Math.round(x-36*scale),Math.round(y-68*scale),72*scale,72*scale);ctx.restore();
+ }
  function snapshot(){return{direction,heading:{...heading},moving,frame,distance,pet:{...pet},trailLength:trail.length,metrics};}
  return{load,reset,face,step,drawHero,snapshot,get pet(){return pet;},get moving(){return moving;}};
 };

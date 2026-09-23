@@ -1,5 +1,5 @@
 /* Preserve the existing background and original logo; recreate the classic title hierarchy. */
-#title-screen{container-type:inline-size;background-image:url('assets/title-generated.webp');background-position:center;background-size:cover}
+#title-screen{container-type:inline-size;background-image:url('assets/title-generated.png');background-position:center;background-size:cover}
 #title-screen .title-shade{background:linear-gradient(180deg,#05251b0d 55%,#05251b65),radial-gradient(ellipse at 36% 39%,#173e2820 0%,transparent 58%);pointer-events:none}
 #title-screen .title-content{left:12%;top:9%;width:48%;display:flex;align-items:center;flex-direction:column}
 #title-screen .logo{display:block;width:100%;max-width:none;height:auto;margin:0;filter:drop-shadow(0 3px 0 #172e22aa) drop-shadow(0 7px 12px #062b2180)}

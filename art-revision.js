@@ -80,12 +80,14 @@
  }
  window.ARPIA_WALKS[1]=embedded[1]||'assets/art-revision/sources/ice-male-walk.png';
  window.ARPIA_WALKS[4]=embedded[4]||'assets/art-revision/sources/ice-female-walk.png';
- window.ARPIA_ROOM_ART=Object.fromEntries(['fur_bed','fur_desk'].map(id=>[id,'assets/art-revision/room/'+id+'.png']));
+ const furniture=['fur_bed','fur_desk','fur_plant','fur_rug','fur_lamp','fur_bookcase','fur_poster','fur_teapot'];
+ window.ARPIA_ROOM_ART=Object.fromEntries(furniture.map(id=>[id,'assets/art-revision/room/'+id+(id==='fur_bed'||id==='fur_desk'?'':'-v1')+'.png']));
+ for(const id of furniture)if(window.ARPIA_DATA.ITEMS[id])window.ARPIA_DATA.ITEMS[id].icon=window.ARPIA_ROOM_ART[id];
  for(const id of ['staff','staff_plus','boots','robe','gloves','pendant','silver_robe','iron_gloves','guardian_ring','wind_boots']){
   if(window.ARPIA_DATA.ITEMS[id])window.ARPIA_DATA.ITEMS[id].icon='assets/art-revision/items/'+id+'.png';
  }
  if(npcs.zombieSisters)npcs.zombieSisters.artPath='assets/art-revision/npcs/zombieSisters.png';
- window.ARPIA_PORTRAITS.zombieSisters='assets/art-revision/npcs/zombieSisters-large.webp';
+ window.ARPIA_PORTRAITS.zombieSisters='assets/art-revision/npcs/zombieSisters-large.png';
  for(const [id,file,portrait]of [
   ['bani','bani-v2','worker/바니.png'],['dick','dick','worker/딕.png'],
   ['rie','rie','teacher/리에.png'],['hubert','hubert','other/휴버트.png'],

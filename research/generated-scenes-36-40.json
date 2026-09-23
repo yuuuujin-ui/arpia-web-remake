@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-09-22",
+  "reconstruction": true,
+  "assets": [
+    {
+      "file": "assets/chapter40/hunger-house-v1.png",
+      "prompt": "Create a single game environment background for a Korean 2000s whimsical 2D fantasy RPG, wide 16:9 composition, 960x540 style proportions. Interior of a white wolf sorcerer's small blue cavern dwelling, seen from elevated three-quarter isometric RPG camera. Painted cyan/slate blue rock walls across the top and left, several small glowing cyan oval openings inset in cave walls, wooden shelf with folded cloth and bowls on upper right, modest wooden bed with red blanket tucked against upper right wall, one broom and empty dish near it, simple domestic details. Floor is a broad clear dusky blue stone plane covering central and lower two thirds. Exit opening at lower left near 16% width / 82% height. Keep uninterrupted walkable floor path from lower left through middle to upper-middle-right (around 62% width / 53% height), and clear standing area at 78% width / 61% height. Soft hand-painted outlined anime game environment, clear readable shapes, saturated cool blues and tiny warm lamp accents. No humans, no monsters, no UI, no text, no dialogue frames, no logos, no watermark. This is an original reconstruction of an icy blue cave home, not a town exterior.",
+      "reference": "40.png blue cavern home scene; verbal reconstruction"
+    },
+    {
+      "file": "assets/chapter36/goblin-form-v1.png",
+      "prompt": "Generate one isolated full-body 2D game sprite on a genuinely transparent background, no painted checkerboard. A small friendly awkward green goblin that a young wizard has accidentally transformed into. Whimsical early-2000s Korean anime browser RPG art: large pointed sideways ears, bald slightly pointed green head, long rounded hooked nose, reddish-brown eyes, small protruding lower teeth, short hunched body in a faded reddish-orange sleeveless tunic, simple brown belt, short trousers and bare broad feet. Three-quarter view facing toward screen right; both feet aligned on the same ground level, arms relaxed slightly away from body. No weapon. Surprised and sheepish expression, not menacing. Clean dark painted outlines, soft cel shaded volume, restrained texture, readable at 60 pixels tall. Entire body fully within canvas, centered with a small transparent margin. No text, no frame, no background, no props, no shadow disc, no UI. New reconstruction asset for an accidental transformation scene, not an existing extracted original sprite.",
+      "reference": "36.png goblin portrait; reconstructed full-body sprite"
+    }
+  ]
+}

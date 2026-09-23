@@ -14,12 +14,12 @@ window.createArpiaEncounters=()=>{
   icedragon:M('아기 얼음용',1,300,21,'penguin'),icegolem:M('아이스 골렘',1,360,24,'cubic'),octopus:M('포악한 문어',1,300,22,'poisonFish'),squid:M('먹물 오징어',1,285,21,'sharkroon'),
   spiritdog:M('혼령강아지',1,170,16,'fightDog'),worm:M('지렁이',2,140,14,'snail'),mercenary:M('떠돌이 용병',0,260,21,'flameSoldier'),cowboy:M('카우보이 인형',0,320,23,'curseDoll'),
   flamesoldier:M('불꽃병사',0,170,15,'flameSoldier'),frog:M('늪 개구리',2,110,12,'frog'),zombie:M('좀비',2,150,15,'shadow'),skeleton:M('해골 전사',0,210,18,'shadow'),
-  sheep:M('얼음양',1,120,12,'sheep'),cactus:M('선인장 괴물',2,150,14,'cactus'),
+  sheep:M('얼음양',1,120,12,'sheep'),cactus:M('선인장 괴물',2,150,14,'cactus'),orc:M('오크',2,230,19,'curseDoll'),
  };
  const g=(...ids)=>ids.map(i=>MON[i]);
  const TABLES={
   weila_school:{xp:20,gold:16,sp:4,groups:[g('rat','rat'),g('rat','wood'),g('wood','wood'),g('rat','rat','wood'),g('spider','rat')]},
-  weila_oak:{xp:30,gold:22,sp:6,groups:[g('goblin','goblin'),g('golem'),g('goblin','golem')]},
+  weila_oak:{xp:30,gold:22,sp:6,groups:[g('goblin','goblin'),g('golem'),g('goblin','golem'),g('orc','golem')]},
   weila_snake:{xp:26,gold:20,sp:5,groups:[g('snake'),g('snake','rat'),g('snake','spider')]},
   weila_ghost:{xp:44,gold:34,sp:8,groups:[g('ghost'),g('ghost','ghost'),g('ghost','snake')]},
   weila_snow:{xp:46,gold:34,sp:8,groups:[g('iceghost'),g('wolf','wolf'),g('iceghost','wolf'),g('sheep','sheep')]},
@@ -45,11 +45,11 @@ window.createArpiaEncounters=()=>{
  };
  const SYMBOL={purple:0,grey:1,cyan:2,blue:3};
  // legacy image-scene patrol (west practice forest)
- const legacy={forest:{minStage:14,name:'서쪽 숲',bg:'assets/maps-hires/forest-battle.webp',routes:[[[430,445],[590,445]],[[590,560],[750,560]],[[270,605],[430,605]]],enemies:[MON.rat,MON.wood],xp:22,gold:18,sp:5}};
+ const legacy={forest:{minStage:14,name:'서쪽 숲',bg:'assets/maps-hires/forest-battle.png',routes:[[[430,445],[590,445]],[[590,560],[750,560]],[[270,605],[430,605]]],enemies:[MON.rat,MON.wood],xp:22,gold:18,sp:5}};
  const known=new Set();let graceUntil=0;
  const register=(key,name,bg,table,groupIndex)=>{X.encounters['wild_'+key]={name:name+' · 몬스터 조우',intro:'몬스터와 마주쳤습니다. 마법과 펫을 활용하거나 도망칠 수 있습니다.',bg,repeatable:true,fieldKey:key,xp:table.xp,gold:table.gold,sp:table.sp,enemies:table.groups[groupIndex%table.groups.length].map(([name,element,hp,atk,sprite],j)=>({name,element,hp,maxHp:hp,atk,sprite,atb:j*12}))};};
  for(const[id,z]of Object.entries(legacy))z.routes.forEach((r,i)=>{const key=id+':'+i;known.add(key);register(key,z.name,z.bg,{xp:z.xp,gold:z.gold,sp:z.sp,groups:[z.enemies]},0);});
- const battleBg={weila:'assets/maps-hires/forest-battle.webp'};
+ const battleBg={weila:'assets/maps-hires/forest-battle.png'};
  const live=new Map();   // scene id -> symbol list
  let rng=1;const rand=()=>((rng=(rng*16807)%2147483647)/2147483647);
  function inSafe(d,x,y){return(d.safe||[]).some(([sx,sy,r])=>Math.hypot(x-sx,y-sy)<r);}
@@ -57,7 +57,7 @@ window.createArpiaEncounters=()=>{
  function build(s,scene){
   const d=MAPS[scene.tilemap];const list=[];
   (d.zones||[]).forEach((z,zi)=>{const table=TABLES[z.table];if(!table)return;for(let i=0;i<(z.count||2);i++){const key=`${scene.id}:${z.id}:${i}`;known.add(key);const p=spawnPoint(scene,d,z);if(!p)continue;
-   const group=Math.floor(rand()*table.groups.length);register(key,d.name,battleBg[scene.id]||'assets/maps-hires/forest-battle.webp',table,group);
+   const group=Math.floor(rand()*table.groups.length);register(key,d.name,battleBg[scene.id]||'assets/maps-hires/forest-battle.png',table,group);
    list.push({key,zone:z,x:p.x,y:p.y,vx:0,vy:0,turn:0,idx:SYMBOL[z.symbol]??0,minStage:z.minStage||0,hidden:false});}});
   live.set(scene.id,list);return list;
  }
@@ -66,7 +66,7 @@ window.createArpiaEncounters=()=>{
   for(const m of list){
    const until=s.encounterCooldowns[m.key]||0;
    if(until>s.seconds){m.hidden=true;continue;}
-   if(m.hidden){const p=spawnPoint(scene,d,m.zone);if(p){m.x=p.x;m.y=p.y;}const t=TABLES[m.zone.table];register(m.key,d.name,battleBg[scene.id]||'assets/maps-hires/forest-battle.webp',t,Math.floor(rand()*t.groups.length));m.hidden=false;}
+   if(m.hidden){const p=spawnPoint(scene,d,m.zone);if(p){m.x=p.x;m.y=p.y;}const t=TABLES[m.zone.table];register(m.key,d.name,battleBg[scene.id]||'assets/maps-hires/forest-battle.png',t,Math.floor(rand()*t.groups.length));m.hidden=false;}
    const dx=s.x-m.x,dy=s.y-m.y,dist=Math.hypot(dx,dy);let speed=34;
    if(dist<250&&!playerSafe&&s.seconds>=graceUntil){m.vx=dx/dist;m.vy=dy/dist;speed=88;}
    else{m.turn-=dt;if(m.turn<=0){const a=rand()*Math.PI*2;m.vx=Math.cos(a);m.vy=Math.sin(a);m.turn=1.2+rand()*2.4;if(rand()<.3){m.vx=m.vy=0;}}}

@@ -1,0 +1,15 @@
+{
+  "generator": "built-in image_gen",
+  "useCase": "stylized-concept",
+  "references": ["assets/art-revision/room/fur_bed.png", "assets/original/map/미니룸.png"],
+  "commonPrompt": "Early Korean fantasy MMO 2D isometric inventory art matching the finished dorm bed and original dorm room palette. One whole object centered on a genuinely transparent background, readable at 100 px. No room, people, text, border, watermark or UI.",
+  "assets": {
+    "fur_plant-v1.png": "Terracotta flowerpot with emerald herb leaves and tiny blue magical buds.",
+    "fur_rug-v1.png": "Rolled-out blue woven rug with warm golden tassels and subtle star motif.",
+    "fur_lamp-v1.png": "Small ornate bronze lamp with warm amber magical flame inside glass.",
+    "fur_bookcase-v1.png": "Modest golden wooden bookcase with spellbooks and one blue crystal.",
+    "fur_poster-v1.png": "Light wooden frame with parchment, blue star and small magical tower silhouette, no letters.",
+    "fur_teapot-v1.png": "Small copper-and-cream porcelain tea kettle with curved spout, wooden handle and blue lid gem."
+  },
+  "verificationScope": "Visual subject, transparency and runtime reference checks. These designs are reconstructed, not source-confirmed originals."
+}

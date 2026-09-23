@@ -2,7 +2,7 @@
 (()=>{
  const x=window.ARPIA_EXTRA,decorate=x.decorate,interact=x.interact,items=x.questItems;
  Object.assign(x.defaults,{mineResin:false,mineGateOpen:false,goldNuggets:0,goldFound:[]});
- Object.assign(x.npcs,{kobi:{name:'코비',anim:'npc_024_도트_코비',portrait:'other/코비.png'},guillaume:{name:'기욤',portraitPath:'assets/guillaume.webp',height:72},minegate:{name:'초승달 광산문'},gold1:{name:'첫 번째 금덩이'},gold2:{name:'두 번째 금덩이'},gold3:{name:'세 번째 금덩이'}});
+ Object.assign(x.npcs,{kobi:{name:'코비',anim:'npc_024_도트_코비',portrait:'other/코비.png'},guillaume:{name:'기욤',portraitPath:'assets/guillaume.png',height:72},minegate:{name:'초승달 광산문'},gold1:{name:'첫 번째 금덩이'},gold2:{name:'두 번째 금덩이'},gold3:{name:'세 번째 금덩이'}});
  x.quests.splice(52,1,
  ['제7화 · 난쟁이 광산','숯을 가지고 광산의 발디 만나기','mine','baldi'],
  ['광산 안내자 코비','광산 작업장의 코비에게 깊은 갱도 묻기','mine','kobi'],
@@ -15,7 +15,7 @@
  ['제7화 완료 · 정비하고 다시','광산 깊은 곳으로 가는 길을 확인했습니다. 다음 탐사를 준비하세요','mine','none']);
  x.chapters.push([94,102,'제7화 난쟁이 광산']);
  x.map.push(['minedepths','광산 깊은 갱도',[120,500]]);
- x.scenes.minedepths=(s,n,p)=>({id:'minedepths',name:s.mineGateOpen?'난쟁이 광산 · 열린 초승달문':'난쟁이 광산 · 봉인된 갱도',bg:'assets/dwarf-mine-depths.webp',w:800,h:600,zoom:1.15,nodes:[[120,500],[200,470],[290,455],[380,425],[475,435],[575,465],[670,430],[700,340],[650,270],[555,245],[445,255],[340,275],[235,265],[145,235],[380,340],[480,320]],edges:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[3,14],[14,15],[15,9],[11,14],[4,15]],entities:[p('back','광산 작업장',120,500,'mine',[660,407]),{...n('minegate',145,235),type:'fixture'},...(s.stage>=99?[n('guillaume',650,270)]:[]),...(s.stage===100?[{...n('gold1',265,455),type:'fixture'},{...n('gold2',445,255),type:'fixture'},{...n('gold3',670,430),type:'fixture'}].filter(e=>!s.goldFound.includes(e.id)):[])]});
+ x.scenes.minedepths=(s,n,p)=>({id:'minedepths',name:s.mineGateOpen?'난쟁이 광산 · 열린 초승달문':'난쟁이 광산 · 봉인된 갱도',bg:'assets/dwarf-mine-depths.png',w:800,h:600,zoom:1.15,nodes:[[120,500],[200,470],[290,455],[380,425],[475,435],[575,465],[670,430],[700,340],[650,270],[555,245],[445,255],[340,275],[235,265],[145,235],[380,340],[480,320]],edges:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[3,14],[14,15],[15,9],[11,14],[4,15]],entities:[p('back','광산 작업장',120,500,'mine',[660,407]),{...n('minegate',145,235),type:'fixture'},...(s.stage>=99?[n('guillaume',650,270)]:[]),...(s.stage===100?[{...n('gold1',265,455),type:'fixture'},{...n('gold2',445,255),type:'fixture'},{...n('gold3',670,430),type:'fixture'}].filter(e=>!s.goldFound.includes(e.id)):[])]});
  x.decorate=(sc,s,n,p)=>{decorate(sc,s,n,p);if(sc.id==='mine'&&s.stage>=95){sc.entities.push(n('kobi',520,307));sc.entities.push({...p('minedepths','광산 안쪽',660,407,'minedepths',[120,500]),minStage:96});}};
  x.questItems=s=>[...items(s),...(s.koboldCharcoal&&s.stage<95?[['코볼트의 숯','발디와 약속한 광산 탐사 교환품']]:[]),...(s.mineResin?[['코비의 송진 가루','광산의 초승달 돌문을 여는 가루']]:[]),...(s.goldNuggets?[['광산의 금덩이',`기욤과 거래하기 위해 모은 금덩이 ${s.goldNuggets}/3`]]:[])];
  const ev={
