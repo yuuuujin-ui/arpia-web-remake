@@ -1,0 +1,27 @@
+{
+  "generator": "built-in image_gen",
+  "useCase": "stylized-concept",
+  "assets": {
+    "assets/art-revision/npcs/bubby-v1.png": {
+      "reference": "assets/original/animation/npc_new_버비/idle.gif",
+      "prompt": "Transparent 2D Korean fantasy MMO NPC illustration of the stocky older carpenter/furniture seller in the provided pixel sprite: gray-brown hair, green shirt, tan work apron and trousers, woodworking tool. Preserve the sprite's colors and silhouette; whole figure, 3/4 stance, no backdrop or text.",
+      "sourceConfidence": "based on the preserved project sprite; a separate original-game portrait has not been found"
+    },
+    "assets/art-revision/npcs/garcia-v1.png": {
+      "reference": "assets/original/animation/npc_new_가르시아/idle.gif",
+      "prompt": "Transparent 2D Korean fantasy MMO NPC illustration of the compact bronze armored arena champion in the provided pixel sprite: simple helmet, round shield with pale cross, short sword and red-brown boots. Preserve the sprite's silhouette and colors; no background or text.",
+      "sourceConfidence": "based on the preserved project sprite; a separate original-game portrait has not been found"
+    },
+    "assets/items/healthGift10.png": {
+      "references": ["assets/items/potion.png", "assets/items/hipotion.png"],
+      "prompt": "One crisp 32-pixel-style red-white health potion matching the two reference icons, distinguished by a gold cap and band; transparent square, no text or frame.",
+      "sourceConfidence": "reconstructed inventory icon"
+    }
+  },
+  "preservedOriginal": {
+    "asset": "assets/art-revision/npcs/woody-original-reference.png",
+    "source": "research/verified-art/wonavy-186-29.png",
+    "url": "https://wonavy.tistory.com/186",
+    "note": "Direct copy of the original-character reference. It retains its photographed backdrop because a generated cutout was rejected twice; generation was not retried."
+  }
+}

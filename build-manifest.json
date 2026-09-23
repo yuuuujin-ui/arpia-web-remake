@@ -2,8 +2,8 @@
   "format": 1,
   "files": {
     "art-revision.js": {
-      "bytes": 6211,
-      "sha256": "dbdefe2a0ea099f381207e33d9020cce691eae2158ba2a52976bd48d3d668157"
+      "bytes": 6762,
+      "sha256": "708cb41513e33859ac0025a9caa894a8419f54de05a1ef9cd1c3726796609197"
     },
     "assets/ancient-ice-book.png": {
       "bytes": 428756,
@@ -57,6 +57,10 @@
       "bytes": 10042,
       "sha256": "0bf1680522ae0c4b14ba271289e19bcd91f77068fc7fcde70b51a3bbd32fa97c"
     },
+    "assets/art-revision/npcs/bubby-v1.png": {
+      "bytes": 1153969,
+      "sha256": "998c4256ab45fa31d8b115afe8eddeb724a338c7eaa1797db46475b7d56afd33"
+    },
     "assets/art-revision/npcs/dick-large.png": {
       "bytes": 882294,
       "sha256": "6607e40314841422fea071e7034f824395f930291f58ebbf8b82dd7a493a9c74"
@@ -64,6 +68,10 @@
     "assets/art-revision/npcs/dick.png": {
       "bytes": 9426,
       "sha256": "426c9aa2c7c54dcde5d912f733a142bfef73453a5ab3870466335da790a25696"
+    },
+    "assets/art-revision/npcs/garcia-v1.png": {
+      "bytes": 1356338,
+      "sha256": "08843d2ac96f008e4ad0de86a663b3e9c92fd3a6f89362eca498f30cdfa84c88"
     },
     "assets/art-revision/npcs/hubert-large.png": {
       "bytes": 404162,
@@ -88,6 +96,10 @@
     "assets/art-revision/npcs/rie.png": {
       "bytes": 10302,
       "sha256": "c206b1fe15b818ff0ded7f2c974258f721eec956e5edf19f6c9b21b06a0993c5"
+    },
+    "assets/art-revision/npcs/woody-original-reference.png": {
+      "bytes": 194208,
+      "sha256": "30f6e4373b0ae3da7a094f0850e3c8e7bf18268a33b1f740e542706cf98f5e4e"
     },
     "assets/art-revision/npcs/zombieSisters-large.png": {
       "bytes": 979547,
@@ -696,6 +708,10 @@
     "assets/items/hat.png": {
       "bytes": 222,
       "sha256": "8513b37975d5def3481d85a6bc236fe1c623358ad20d7cc08940b4558ef49ae0"
+    },
+    "assets/items/healthGift10.png": {
+      "bytes": 243518,
+      "sha256": "f40d69fd172bdc4b72260fa4a72f8f6240243d61d4fc9ace0069846f88e546ff"
     },
     "assets/items/herb.png": {
       "bytes": 280,
@@ -9726,8 +9742,8 @@
       "sha256": "615fb5f490bdf9101a63c9c4f5f275f1172bfe5d7a5105fa7c6b7e3a90358714"
     },
     "chapter27.js": {
-      "bytes": 17106,
-      "sha256": "90eeeb716681fe5eca806b313913f4debd7984eb3098ab809802c6ac55b432cb"
+      "bytes": 17151,
+      "sha256": "f9348940a5c67649e01e98581707ee273d5786fed1e3a6ea0a00278df71dba5a"
     },
     "chapter28.js": {
       "bytes": 16613,
@@ -9826,16 +9842,16 @@
       "sha256": "95f49b5a284d91e31317a296639e32f42096a57c477eac5d10dd63b522e23621"
     },
     "game.js": {
-      "bytes": 134066,
-      "sha256": "40b88fd38761aab6461d680b960bd97ebb658434c5f75511d8e90693069f7e20"
+      "bytes": 134585,
+      "sha256": "c218e745bbc9cd3a46492f620652038788038cef581aa5086f494a369299d986"
     },
     "index.html": {
       "bytes": 7313,
       "sha256": "4f812c9b99d75da5fc1997293b60f41936d30dbc9675b6a3660fe9f8f5a2456d"
     },
     "missions-extra.js": {
-      "bytes": 9900,
-      "sha256": "6305f4290640b1f96f61c667c8fc30766ad77bebf1e393fce295ce8723e8e08a"
+      "bytes": 9960,
+      "sha256": "d8fb5b14adfa2edfb7dc6cae542c8f241d6bb48697f45fe616dbebbef30f1405"
     },
     "motion.js": {
       "bytes": 7184,

@@ -88,6 +88,13 @@
  }
  if(npcs.zombieSisters)npcs.zombieSisters.artPath='assets/art-revision/npcs/zombieSisters.png';
  window.ARPIA_PORTRAITS.zombieSisters='assets/art-revision/npcs/zombieSisters-large.png';
+ for(const [id,file]of [['bubby','bubby-v1.png'],['arenaChampion','garcia-v1.png']]){
+  const art='assets/art-revision/npcs/'+file;
+  if(npcs[id])Object.assign(npcs[id],{artPath:art,portraitPath:art});
+ }
+ // This is the preserved original Woody reference, used directly after two
+ // rejected attempts to generate a transparent likeness. The source has a backdrop.
+ if(npcs.woody)Object.assign(npcs.woody,{artPath:'assets/art-revision/npcs/woody-original-reference.png',portraitPath:'assets/art-revision/npcs/woody-original-reference.png',height:72});
  for(const [id,file,portrait]of [
   ['bani','bani-v2','worker/바니.png'],['dick','dick','worker/딕.png'],
   ['rie','rie','teacher/리에.png'],['hubert','hubert','other/휴버트.png'],

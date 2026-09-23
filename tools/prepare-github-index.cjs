@@ -15,7 +15,7 @@ async function main(){
   const bytes=await fs.readFile(path.join(root,relative));
   if(crypto.createHash('sha256').update(bytes).digest('hex')!==manifest.files[relative].sha256)throw Error('Rebuild needed: '+relative);
  }
- files.push('README.md','PROGRESS.md','TEST-RESULTS.md','RESEARCH.md','research/DIALOGUE-VISUAL-AUDIT.md','research/capture-runtime-results.json','research/generated-joker.json','research/generated-scenes-36-40.json','research/npc-asset-audit.json','research/midterm-image-prompts.json','research/verified-art/STATUS.md','research/verified-art/furniture-prompts-20260923.json','tools/check-static.cjs','tools/build-static.cjs','tools/serve-audit.cjs','tools/prepare-github-index.cjs');
+ files.push('README.md','PROGRESS.md','TEST-RESULTS.md','RESEARCH.md','research/DIALOGUE-VISUAL-AUDIT.md','research/capture-runtime-results.json','research/generated-joker.json','research/generated-scenes-36-40.json','research/npc-asset-audit.json','research/midterm-image-prompts.json','research/verified-art/STATUS.md','research/verified-art/furniture-prompts-20260923.json','research/verified-art/npc-and-item-prompts-20260923.json','tools/check-static.cjs','tools/build-static.cjs','tools/serve-audit.cjs','tools/prepare-github-index.cjs');
  files.push('tools/check-free-unlock.cjs');
  for(const name of await fs.readdir(path.join(root,'tools','audit')))if(/^runtime.*\.js$/.test(name))files.push('tools/audit/'+name);
  const pathspec=path.join(scratch,'paths');await fs.writeFile(pathspec,files.join('\0')+'\0');

@@ -28,7 +28,7 @@ window.ARPIA_MISSIONS2=(()=>{
  enc('exam_novice','계급 시험 · 초보 마법사','교장실의 문이 시험장으로 이어집니다. 두 마리 시험 정령을 물리치세요.','assets/maps-hires/school-interior.png',[E('시험 정령',0,150,12,'examFire'),E('시험 정령',1,150,12,'examIce',12)],90,60);
  enc('exam_skilled','계급 시험 · 숙련 마법사','세 마리 시험 정령이 속성을 바꿔 가며 공격합니다.','assets/maps-hires/school-interior.png',[E('시험 정령',0,300,18,'examFire'),E('시험 정령',1,300,18,'examIce',10),E('시험 정령',2,300,18,'examEarth',20)],220,120);
  enc('exam_mage','계급 시험 · 마도사','시험관 골렘이 버티고 섭니다. 상태이상과 펫 스킬을 총동원하세요.','assets/maps-hires/school-interior.png',[E('시험관 골렘',2,900,26,'examGolem'),E('골렘의 핵',2,260,16,'golemCore',15)],480,240);
- enc('zombie_sisters','좀비 세자매','세 자매가 독 안개를 내뿜으며 다가옵니다.','assets/maps-hires/forest-battle.png',[E('좀비 첫째',2,260,20,'zombieSisters'),E('좀비 둘째',2,240,19,'zombieSisters',10),E('좀비 셋째',2,220,18,'zombieSisters',20)],210,90);
+ enc('zombie_sisters','좀비 세자매','세 자매가 독 안개를 내뿜으며 다가옵니다.','assets/maps-hires/forest-battle.png',[{...E('좀비 첫째',2,260,20,'zombieSisters'),spriteRegion:0},{...E('좀비 둘째',2,240,19,'zombieSisters',10),spriteRegion:1},{...E('좀비 셋째',2,220,18,'zombieSisters',20),spriteRegion:2}],210,90);
  enc('royal_arena','왕국경기장 대전','관중의 함성 속에 챔피언 가르시아가 등장합니다.','assets/maps-hires/colosseum.png',[E('경기장 챔피언 가르시아',0,520,24,'garcia'),E('경기장 검투사',2,300,18,'woodDoll',15)],200,200);
  const needText=(s,d)=>Object.entries(d.need).map(([id,n])=>`${D.ITEMS[id].name} ${SYS().inv.count(s,id)}/${n}`).join(' · ');
  const hasNeed=(s,d)=>Object.entries(d.need).every(([id,n])=>SYS().inv.count(s,id)>=n);
